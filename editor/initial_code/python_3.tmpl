@@ -1,0 +1,33 @@
+{% comment %}New initial code template{% endcomment %}
+{% block env %}{% endblock env %}
+
+{% block start %}
+def bigger_price(limit: int, data: list) -> list:
+    """
+        TOP most expensive goods
+    """
+    # your code here
+    return None
+
+
+{% endblock start %}
+
+{% block example %}
+print('Example:')
+print(bigger_price(2, [
+        {"name": "bread", "price": 100},
+        {"name": "wine", "price": 138},
+        {"name": "meat", "price": 15},
+        {"name": "water", "price": 1}
+    ]))
+{% endblock %}
+
+{% block tests %}
+{% for t in tests %}
+assert {% block call %}bigger_price({{t.input|p_args}})
+{% endblock %} == {% block result %}{{t.answer|p}}{% endblock %}{% endfor %}
+{% endblock %}
+
+{% block final %}
+print("The mission is done! Click 'Check Solution' to earn rewards!")
+{% endblock final %}

@@ -1,4 +1,4 @@
-<p>
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
     あなたは店で販売している全商品をまとめた表を持っています。このデータは{% if interpreter.slug == "js-node" %}オブジェクト{% else %}辞書{% endif %}のリストで表現されます。
 </p>
 
@@ -6,15 +6,7 @@
     あなたのミッションは、最も高額な品物を見つけることです。見つけ出す品物の数は最初の引数で与えられ、2番目の引数で全ての商品が与えられます。
 </p>
 
-{% if interpreter.slug == "js-node" %}
-<p>
-    <strong>入力: </strong>  整数とオブジェクトの配列。各オブジェクトは "name" と "price" の属性をもつ。
-</p>
-{% else %}
-<p>
-    <strong>入力: </strong> 整数と辞書のリスト。 各辞書は "name" と "price" の２つのキーを持つ。
-</p>
-{% endif %}
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 
 <p>
     <strong>出力: </strong> 入力の2番目の引数と同じ形式
@@ -27,37 +19,5 @@
         <strong>例:</strong>
     </p>
 
-{% if interpreter.slug == "js-node" %}
-<pre class="brush: javascript">biggerPrice(2, [
-    {"name": "bread", "price": 100},
-    {"name": "wine", "price": 138},
-    {"name": "meat", "price": 15},
-    {"name": "water", "price": 1}
-]) == [
-    {"name": "wine", "price": 138},
-    {"name": "bread", "price": 100}
-]
-
-biggerPrice(1, [
-    {"name": "pen", "price": 5},
-    {"name": "whiteboard", "price": 170}
-]) == [{"name": "whiteboard", "price": 170}]
-</pre>
-{% else %}
-<pre class="brush: python">bigger_price(2, [
-    {"name": "bread", "price": 100},
-    {"name": "wine", "price": 138},
-    {"name": "meat", "price": 15},
-    {"name": "water", "price": 1}
-]) == [
-    {"name": "wine", "price": 138},
-    {"name": "bread", "price": 100}
-]
-
-bigger_price(1, [
-    {"name": "pen", "price": 5},
-    {"name": "whiteboard", "price": 170}
-]) == [{"name": "whiteboard", "price": 170}]
-</pre>
-{% endif %}
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
