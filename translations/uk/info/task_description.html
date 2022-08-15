@@ -1,0 +1,34 @@
+<p>
+    У тебе є стіл з усіма наявними товарами в магазині. Дані представлені у вигляді
+    {% if interpreter.slug == "js-node" %}масиву об'єктів{% else %}списку словників{% endif %}
+</p>
+
+<p>
+    Твоя місія - знайти ТОП найдорожчих товарів. Кількість товарів, які ми шукаємо, буде передано у першому аргументі,
+    а самі дані щодо товарів будуть передані другим аргументом.
+</p>
+
+{% if interpreter.slug == "js-node" %}
+<p>
+    <strong>Вхідні дані: </strong>  Число та масив об'єктів (Integer and array of objects). У кожного об'єкта 2 атрибути
+    "name" та "price"
+</p>
+{% else %}
+<p>
+    <strong>Вхідні дані: </strong> Число та список словників (int and list of dicts). Кожен словник має 2 ключі "name" та "price".
+</p>
+{% endif %}
+
+<p>
+    <strong>Вихідні дані: </strong> Такий, як і другий аргумент.
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Приклади:</strong>
+    </p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>

@@ -1,5 +1,5 @@
 <p>
-    You have a table with all available goods in the store. The data is represented as a list of {% if interpreter.slug == "js-node" %}objects{% else %}dicts{% endif %}
+    You have a table with all available goods in the store. The data is represented as a list of {% if interpreter.slug == "js-node" %}objects array{% else %}dicts{% endif %}
 </p>
 
 <p>
@@ -27,38 +27,5 @@
         <strong>Example:</strong>
     </p>
 
-{% if interpreter.slug == "js-node" %}
-<pre class="brush: javascript">biggerPrice(2, [
-    {"name": "bread", "price": 100},
-    {"name": "wine", "price": 138},
-    {"name": "meat", "price": 15},
-    {"name": "water", "price": 1}
-]) == [
-    {"name": "wine", "price": 138},
-    {"name": "bread", "price": 100}
-]
-
-biggerPrice(1, [
-    {"name": "pen", "price": 5},
-    {"name": "whiteboard", "price": 170}
-]) == [{"name": "whiteboard", "price": 170}]
-</pre>
-{% else %}
-<pre class="brush: python">bigger_price(2, [
-    {"name": "bread", "price": 100},
-    {"name": "wine", "price": 138},
-    {"name": "meat", "price": 15},
-    {"name": "water", "price": 1}
-]) == [
-    {"name": "wine", "price": 138},
-    {"name": "bread", "price": 100}
-]
-
-bigger_price(1, [
-    {"name": "pen", "price": 5},
-    {"name": "whiteboard", "price": 170}
-]) == [{"name": "whiteboard", "price": 170}]
-</pre>
-{% endif %}
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
-

@@ -1,0 +1,72 @@
+<body data-author="likewind">
+
+<div class="question-answer">
+    <div class="question">
+        Для початку мені потрібні ідеї.
+    </div>
+    <div class="answer">
+        Тобі потрібно сортувати список словників у порядок 'price' і залишити стільки словників
+        як визначено за допомогою параметра 'limit'.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Що саме я маю використовувати для цього?
+    </div>
+    <div class="answer">
+       Використовуй вбудовану
+        <a href='https://docs.python.org/3/library/functions.html?highlight=sorted#sorted'>sorted()</a> функцію.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Як саме сортування словників буде реалізовано відповідно до цінностей "ціни"?
+    </div>
+    <div class="answer">
+        Функція може виглядати так:
+        <pre class="brush: python">
+def bigger_price(limit: int, data: list[dict]) -> list[dict]:
+    return sorted(data, key=lambda x: x['price'])</pre>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Але словники були відсортовані від найнижчої до найвищої "price". Що я маю зробити?
+    </div>
+    <div class="answer">
+        Ти можеш додати параметр "reverse":
+        <pre class="brush: python">
+def bigger_price(limit: int, data: list[dict]) -> list[dict]:
+    return sorted(data, key=lambda x: x['price'], reverse=True)</pre>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Як саме я маю враховувати параметр "limit"?
+    </div>
+    <div class="answer">
+        Для того, щоб зменшити остаточний відсортований список до кількості елементів, що дорівнюють "limit", та повинен
+        зробити зріз і вказати значення "limit" як правильної межі.
+        Це буде виглядати приблизно так:
+        <pre class="brush: python">
+x = sorted(x)[:limit]</pre>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Щоб зрозуміти це, мені потрібно побачити всю картину.
+    </div>
+    <div class="answer">
+        Функція може виглядати так:
+        <pre class="brush: python">
+def bigger_price(limit: int, data: list[dict]) -> list[dict]:
+    return sorted(data, key=lambda x: x['price'], reverse=True)[:limit]</pre>
+    </div>
+</div>
+
+</body>

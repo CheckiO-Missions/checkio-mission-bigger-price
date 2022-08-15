@@ -27,7 +27,7 @@
     <div class="answer">
         The function might look like this:
         <pre class="brush: python">
-def bigger_price(limit, data):
+def bigger_price(limit: int, data: list[dict]) -> list[dict]:
     return sorted(data, key=lambda x: x['price'])</pre>
     </div>
 </div>    
@@ -39,7 +39,7 @@ def bigger_price(limit, data):
     <div class="answer">
         You can add an extra parameter:
         <pre class="brush: python">
-def bigger_price(limit, data):
+def bigger_price(limit: int, data: list[dict]) -> list[dict]:
     return sorted(data, key=lambda x: x['price'], reverse=True)</pre>
     </div>
 </div>
@@ -64,7 +64,7 @@ x = sorted(x)[:limit]</pre>
     <div class="answer">
         The function might look as follows:
         <pre class="brush: python">
-def bigger_price(limit, data):
+def bigger_price(limit: int, data: list[dict]) -> list[dict]:
     return sorted(data, key=lambda x: x['price'], reverse=True)[:limit]</pre>
     </div>
 </div>
