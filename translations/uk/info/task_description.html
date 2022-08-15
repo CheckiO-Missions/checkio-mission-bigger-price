@@ -1,15 +1,26 @@
-<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
-    У тебе є стіл з усіма наявними товарами в магазині. Дані представлені у вигляді списку {% if interpreter.slug == "js-node" %}об'єктів{% else %}словників{% endif %}.
+<p>
+    У тебе є стіл з усіма наявними товарами в магазині. Дані представлені у вигляді
+    {% if interpreter.slug == "js-node" %}масиву об'єктів{% else %}списку словників{% endif %}
 </p>
 
 <p>
-    Твоя місія тут - знайти ТОП найдорожчих товарів. Сума, яку ми шукаємо, буде подана як перший аргумент, а всі дані як другий.
+    Твоя місія - знайти ТОП найдорожчих товарів. Кількість товарів, які ми шукаємо, буде передано у першому аргументі,
+    а самі дані щодо товарів будуть передані другим аргументом.
 </p>
 
-<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+{% if interpreter.slug == "js-node" %}
+<p>
+    <strong>Вхідні дані: </strong>  Число та масив об'єктів (Integer and array of objects). У кожного об'єкта 2 атрибути
+    "name" та "price"
+</p>
+{% else %}
+<p>
+    <strong>Вхідні дані: </strong> Число та список словників (int and list of dicts). Кожен словник має 2 ключі "name" та "price".
+</p>
+{% endif %}
 
 <p>
-    <strong>Вихідні дані: </strong> Список {% if interpreter.slug == "js-node" %}об'єктів{% else %}словників{% endif %}.
+    <strong>Вихідні дані: </strong> Такий, як і другий аргумент.
 </p>
 
 
@@ -21,4 +32,3 @@
 
 <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
-

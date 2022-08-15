@@ -1,4 +1,4 @@
-<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+<p>
     あなたは店で販売している全商品をまとめた表を持っています。このデータは{% if interpreter.slug == "js-node" %}オブジェクト{% else %}辞書{% endif %}のリストで表現されます。
 </p>
 
@@ -6,7 +6,15 @@
     あなたのミッションは、最も高額な品物を見つけることです。見つけ出す品物の数は最初の引数で与えられ、2番目の引数で全ての商品が与えられます。
 </p>
 
-<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+{% if interpreter.slug == "js-node" %}
+<p>
+    <strong>入力: </strong>  整数とオブジェクトの配列。各オブジェクトは "name" と "price" の属性をもつ。
+</p>
+{% else %}
+<p>
+    <strong>入力: </strong> 整数と辞書のリスト。 各辞書は "name" と "price" の２つのキーを持つ。
+</p>
+{% endif %}
 
 <p>
     <strong>出力: </strong> 入力の2番目の引数と同じ形式
