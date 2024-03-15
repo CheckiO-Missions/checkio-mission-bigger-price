@@ -1,0 +1,31 @@
+<p>
+    Sie haben eine Liste mit allen verfügbaren Produkten in einem Geschäft. Die Daten werden dargestellt als {% if interpreter.slug == "js-node" %}ein Objekt-Array{% else %}eine Liste von Dicts{% endif %}
+</p>
+
+<p>
+    Ihre Aufgabe ist es nun, die teuersten Produkte in der Liste zu finden. Die Anzahl der Produkte, nach denen wir suchen, wird als erstes Argument angegeben und die Liste aller Produkte als zweites Argument.
+</p>
+
+{% if interpreter.slug == "js-node" %}
+<p>
+   <strong>Eingabe: </strong>  Integer und Array von Objekten. Jedes Objekt hat die beiden Attribute "Name" und "Preis"
+</p>
+{% else %}
+<p>
+   <strong>Eingabe: </strong> int und eine Liste von Dictes. Jedes Dict hat die beiden Schlüssel "Name" und "Preis"
+</p>
+{% endif %}
+
+<p>
+   <strong>Ausgabe: </strong> Das gleiche Format wie das zweite Eingabeargument.
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Beispiel:</strong>
+    </p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
