@@ -1,0 +1,72 @@
+<body data-author="likewind">
+
+<div class="question-answer">
+    <div class="question">
+        Ich brauche ein paar Ideen für den Anfang.
+    </div>
+    <div class="answer">
+        Sie müssen die Liste der Wörterbücher in absteigender Reihenfolge nach 'Preis' sortieren und so viele Wörterbücher übrig lassen 
+        wie über den Parameter 'Limit' definiert.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Was genau soll ich dafür verwenden?
+    </div>
+    <div class="answer">
+        Verwenden Sie die eingebaute 
+        <a href='https://docs.python.org/3/library/functions.html?highlight=sorted#sorted'>sorted()</a> funktion.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Wie genau wird die Sortierung der Wörterbücher nach den 'Preis'-Werten umgesetzt?
+    </div>
+    <div class="answer">
+        Die Funktion könnte wie folgt aussehen:
+       <pre class="brush: python">
+def bigger_price(limit: int, data: list[dict]) -> list[dict]:
+    return sorted(data, key=lambda x: x['price'])</pre>
+    </div>
+</div>    
+    
+<div class="question-answer">
+    <div class="question">
+        Aber die Wörterbücher wurden vom niedrigsten zum höchsten 'Preis' sortiert. Was soll ich tun?
+    </div>
+    <div class="answer">
+        Sie können einen zusätzlichen Parameter hinzufügen:
+       <pre class="brush: python">
+def bigger_price(limit: int, data: list[dict]) -> list[dict]:
+    return sorted(data, key=lambda x: x['price'], reverse=True)</pre>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Wie genau soll ich den Parameter 'Limit' berücksichtigen?
+    </div>
+    <div class="answer">
+        Um die endgültige sortierte Liste auf die Anzahl der Elemente zu reduzieren, die dem 'limit' entspricht, sollten Sie 
+        ein Slice erstellen und den Wert von 'limit' als rechte Grenze angeben.
+        Das sieht dann etwa so aus:
+       <pre class="brush: python">
+x = sorted(x)[:limit]</pre>
+    </div>
+</div>    
+    
+<div class="question-answer">
+    <div class="question">
+        Um das herauszufinden, muss ich das ganze Bild sehen.
+    </div>
+    <div class="answer">
+        Die Funktion könnte wie folgt aussehen:
+       <pre class="brush: python">
+def bigger_price(limit: int, data: list[dict]) -> list[dict]:
+    return sorted(data, key=lambda x: x['price'], reverse=True)[:limit]</pre>
+    </div>
+</div>
+
+</body>
